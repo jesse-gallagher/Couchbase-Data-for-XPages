@@ -1,6 +1,11 @@
 Couchbase Data Sources for XPages
 =================================
 
+TODO
+----
+* Switch to use CAS for document data sources, perhaps optionally
+* Add a data source for a CAS-based key-value entry
+* Package up as OSGi plugin
 
 Requirements
 ------------

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="Beers.xsp">
+	
+	<xc:Layout>
+
+		<pre class="brush: xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xp:view xmlns:xp=&quot;http://www.ibm.com/xsp/core&quot; xmlns:xe=&quot;http://www.ibm.com/xsp/coreex&quot; xmlns:xc=&quot;http://www.ibm.com/xsp/custom&quot; xmlns:cb=&quot;http://frostillic.us/xsp/couchbase&quot;
+	beforePageLoad=&quot;#{pageController.beforePageLoad}&quot; afterPageLoad=&quot;#{pageController.afterPageLoad}&quot; pageTitle=&quot;Beers&quot;&gt;
+
+	&lt;xp:this.data&gt;
+		&lt;cb:couchbaseView var=&quot;beersView&quot; connectionName=&quot;couchbasePelias&quot; designDoc=&quot;beer&quot; viewName=&quot;by_name&quot; /&gt;
+	&lt;/xp:this.data&gt;
+
+	&lt;xc:Layout&gt;
+
+		&lt;xp:viewPanel value=&quot;#{beersView}&quot; var=&quot;beer&quot; id=&quot;beerView&quot; pageName=&quot;/Beer.xsp&quot; viewStyleClass=&quot;notesView&quot;&gt;
+			&lt;xp:this.facets&gt;
+				&lt;xp:pager xp:key=&quot;headerPager&quot; id=&quot;pager1&quot; layout=&quot;Previous Group Next&quot; partialRefresh=&quot;true&quot; /&gt;
+				&lt;xp:pager xp:key=&quot;footerPager&quot; id=&quot;pager2&quot; layout=&quot;Previous Group Next&quot; partialRefresh=&quot;true&quot; /&gt;
+			&lt;/xp:this.facets&gt;
+
+			&lt;xp:viewColumn columnName=&quot;name&quot; displayAs=&quot;link&quot;&gt;
+				&lt;xp:viewColumnHeader value=&quot;Name&quot;/&gt;
+			&lt;/xp:viewColumn&gt;
+			&lt;xp:viewColumn columnName=&quot;abv&quot;&gt;
+				&lt;xp:viewColumnHeader value=&quot;ABV&quot;/&gt;
+			&lt;/xp:viewColumn&gt;
+			&lt;xp:viewColumn columnName=&quot;&quot; value=&quot;#{couchbasePelias[beer.brewery_id].name}&quot;&gt;
+				&lt;xp:viewColumnHeader value=&quot;Brewery&quot;/&gt;
+			&lt;/xp:viewColumn&gt;
+			&lt;xp:viewColumn columnName=&quot;category&quot;&gt;
+				&lt;xp:viewColumnHeader value=&quot;Category&quot;/&gt;
+			&lt;/xp:viewColumn&gt;
+			&lt;xp:viewColumn columnName=&quot;style&quot;&gt;
+				&lt;xp:viewColumnHeader value=&quot;Style&quot;/&gt;
+			&lt;/xp:viewColumn&gt;
+		&lt;/xp:viewPanel&gt;
+	&lt;/xc:Layout&gt;
+&lt;/xp:view&gt;</pre>
+	</xc:Layout>
+</xp:view>

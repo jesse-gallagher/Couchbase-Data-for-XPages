@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="faces-config.xml">
+	
+	<xc:Layout>
+		<pre class="brush: xml"><xp:text disableTheme="true"><xp:this.value><![CDATA[${javascript:
+			var is = facesContext.getExternalContext().getResourceAsStream("WEB-INF/faces-config.xml")
+			var reader = new java.io.BufferedReader(new java.io.InputStreamReader(is))
+			var result = new java.lang.StringBuilder()
+			while(reader.ready()) {
+				result.append(reader.readLine());
+				result.append(" \n");
+			}
+			is.close()
+			return result.toString()
+		}]]></xp:this.value></xp:text></pre>
+	</xc:Layout>
+</xp:view>

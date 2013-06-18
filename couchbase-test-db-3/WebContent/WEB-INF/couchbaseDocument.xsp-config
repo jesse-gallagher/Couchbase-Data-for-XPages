@@ -1,0 +1,33 @@
+<faces-config>
+	<faces-config-extension>
+		<namespace-uri>http://frostillic.us/xsp/couchbase</namespace-uri>
+		<default-prefix>cb</default-prefix>
+	</faces-config-extension>
+
+	<complex-type>
+		<description>A Couchbase document</description>
+		<display-name>Couchbase Document</display-name>
+		<complex-id>frostillicus.couchbase.couchbasedocumentdata</complex-id>
+		<complex-class>frostillicus.couchbase.CouchbaseDocumentData</complex-class>
+		<group-type-ref>com.ibm.xsp.model.group.DataSource</group-type-ref>
+
+		<property>
+			<display-name>connectionName</display-name>
+			<property-name>connectionName</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension/>
+		</property>
+		<property>
+			<display-name>documentId</display-name>
+			<property-name>documentId</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension/>
+		</property>
+
+		<complex-extension>
+			<tag-name>couchbaseDocument</tag-name>
+			<base-complex-id>dataInterface</base-complex-id>
+			<designer-extension />
+		</complex-extension>
+	</complex-type>
+</faces-config>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:cb="http://frostillic.us/xsp/couchbase"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="Beers">
+
+	<xp:this.data>
+		<cb:couchbaseView var="beersView" connectionName="couchbasePelias" designDoc="beer" viewName="by_name" />
+	</xp:this.data>
+
+	<xc:Layout>
+
+		<xp:viewPanel value="#{beersView}" var="beer" id="beerView" pageName="/Beer.xsp" viewStyleClass="notesView">
+			<xp:this.facets>
+				<xp:pager xp:key="headerPager" id="pager1" layout="Previous Group Next" partialRefresh="true" />
+				<xp:pager xp:key="footerPager" id="pager2" layout="Previous Group Next" partialRefresh="true" />
+			</xp:this.facets>
+
+			<xp:viewColumn columnName="name" displayAs="link">
+				<xp:viewColumnHeader value="Name"/>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="abv">
+				<xp:viewColumnHeader value="ABV"/>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="" value="#{couchbasePelias[beer.brewery_id].name}">
+				<xp:viewColumnHeader value="Brewery"/>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="category">
+				<xp:viewColumnHeader value="Category"/>
+			</xp:viewColumn>
+			<xp:viewColumn columnName="style">
+				<xp:viewColumnHeader value="Style"/>
+			</xp:viewColumn>
+		</xp:viewPanel>
+	</xc:Layout>
+</xp:view>

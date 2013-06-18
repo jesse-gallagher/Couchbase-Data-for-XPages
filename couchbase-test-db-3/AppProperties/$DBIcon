@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='85257B8E005B389B'>
+<noteinfo noteid='192' unid='EE6DBC271CF713FF852577EF006A6BB1' sequence='3'>
+<created><datetime>20101204T142223,85-05</datetime></created>
+<modified><datetime dst='true'>20130618T123624,05-04</datetime></modified>
+<revised><datetime>20130122T211408,80-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20130618T123624,04-04</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130618T123624,04-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=MTC</name><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name='$TITLE'><text>$DBIcon</text></item>
+<item name='$Flags'><text>34Ci~Q</text></item>
+<item name='$ImagesWide' sign='true'><number>1</number></item>
+<item name='$ImagesHigh' sign='true'><number>1</number></item>
+<item name='$ImagesColorize' sign='true'><number>0</number></item>
+<item name='$FileSize' sign='true'><number>2223</number></item>
+<item name='$ImageData' sign='true'>
+<rawitemdata type='1'>
+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
+AElFTkSuQmCCAA==
+</rawitemdata></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime>20130116T110814,00-05</datetime></item>
+<item name='$ImageNames' sign='true'><text>Y:\Pictures\tango-icon-theme-0.8.90\32x32\categories\applications-accessories.png</text></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item></note>
+

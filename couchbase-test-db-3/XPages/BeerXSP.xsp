@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="Beers.xsp">
+	
+	<xc:Layout>
+
+		<pre class="brush: xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xp:view xmlns:xp=&quot;http://www.ibm.com/xsp/core&quot; xmlns:xe=&quot;http://www.ibm.com/xsp/coreex&quot; xmlns:xc=&quot;http://www.ibm.com/xsp/custom&quot; xmlns:cb=&quot;http://frostillic.us/xsp/couchbase&quot;
+	beforePageLoad=&quot;#{pageController.beforePageLoad}&quot; afterPageLoad=&quot;#{pageController.afterPageLoad}&quot; pageTitle=&quot;Beers&quot;&gt;
+
+	&lt;xp:this.data&gt;
+		&lt;cb:couchbaseDocument var=&quot;beer&quot; connectionName=&quot;couchbasePelias&quot; documentId=&quot;${param.documentId}&quot;/&gt;
+	&lt;/xp:this.data&gt;
+	
+	&lt;xp:this.navigationRules&gt;
+		&lt;xp:navigationRule outcome=&quot;xsp-success&quot; viewId=&quot;/Beers.xsp&quot;/&gt;
+	&lt;/xp:this.navigationRules&gt;
+
+	&lt;xc:Layout&gt;
+		&lt;xe:formTable formTitle=&quot;Beer&quot;&gt;
+			&lt;xp:this.facets&gt;
+				&lt;xp:div xp:key=&quot;footer&quot;&gt;
+					&lt;xp:button id=&quot;save&quot; value=&quot;Save&quot;&gt;
+						&lt;xp:eventHandler event=&quot;onclick&quot; submit=&quot;true&quot; refreshMode=&quot;complete&quot; immediate=&quot;false&quot; save=&quot;true&quot;/&gt;
+					&lt;/xp:button&gt;
+					&lt;xp:link id=&quot;cancel&quot; value=&quot;/Beers.xsp&quot; text=&quot;Cancel&quot;/&gt;
+				&lt;/xp:div&gt;
+			&lt;/xp:this.facets&gt;
+		
+			&lt;xe:formRow label=&quot;ABV&quot;&gt;
+				&lt;xp:inputText value=&quot;#{beer.abv}&quot;&gt;
+					&lt;xp:this.converter&gt;
+						&lt;xp:convertNumber type=&quot;number&quot;/&gt;
+					&lt;/xp:this.converter&gt;
+				&lt;/xp:inputText&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Brewery ID&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.brewery_id}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Category&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.category}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Description&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.description}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;IBU&quot;&gt;
+				&lt;xp:inputText value=&quot;#{beer.ibu}&quot;&gt;
+					&lt;xp:this.converter&gt;
+						&lt;xp:convertNumber type=&quot;number&quot;/&gt;
+					&lt;/xp:this.converter&gt;
+				&lt;/xp:inputText&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Name&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.name}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;SRM&quot;&gt;
+				&lt;xp:inputText value=&quot;#{beer.srm}&quot;&gt;
+					&lt;xp:this.converter&gt;
+						&lt;xp:convertNumber type=&quot;number&quot;/&gt;
+					&lt;/xp:this.converter&gt;
+				&lt;/xp:inputText&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Style&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.style}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Type&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.type}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;UPC&quot;&gt;
+				&lt;xp:inputText value=&quot;#{beer.upc}&quot;&gt;
+					&lt;xp:this.converter&gt;
+						&lt;xp:convertNumber type=&quot;number&quot;/&gt;
+					&lt;/xp:this.converter&gt;
+				&lt;/xp:inputText&gt;
+			&lt;/xe:formRow&gt;
+			&lt;xe:formRow label=&quot;Updated&quot;&gt;
+				&lt;xe:djTextarea value=&quot;#{beer.updated}&quot;/&gt;
+			&lt;/xe:formRow&gt;
+			
+		&lt;/xe:formTable&gt;
+	&lt;/xc:Layout&gt;
+&lt;/xp:view&gt;</pre>
+	</xc:Layout>
+</xp:view>

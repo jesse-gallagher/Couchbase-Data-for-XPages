@@ -1,0 +1,4 @@
+html body .syntaxhighlighter {
+	line-height: inherit;
+	overflow-y: hidden !important;
+}

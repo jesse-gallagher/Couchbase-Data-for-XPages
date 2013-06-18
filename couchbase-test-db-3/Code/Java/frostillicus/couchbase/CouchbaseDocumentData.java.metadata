@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="85257B8E005B389B" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="282" sequence="66" unid="372B93ADC575F70B85257B8C008023EF">
+<created><datetime dst="true">20130616T191938,07-04</datetime></created>
+<modified><datetime dst="true">20130618T123626,82-04</datetime></modified>
+<revised><datetime dst="true">20130616T201456,44-04</datetime></revised>
+<lastaccessed><datetime dst="true">20130618T123626,81-04</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130618T123626,81-04</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Jesse Gallagher/O=Frost</name></updatedby>
+<wassignedby><name>CN=Jesse Gallagher/O=Frost</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>frostillicus/couchbase/CouchbaseDocumentData.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>frostillicus/couchbase/CouchbaseDocumentData.java</text></item>
+
+
+
+
+
+
+
+
+</note>

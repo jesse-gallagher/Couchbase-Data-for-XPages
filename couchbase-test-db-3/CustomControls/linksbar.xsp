@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xe:navigator id="nav">
+		<xe:this.treeNodes>
+			<xe:pageTreeNode page="Beers" label="Beers"/>
+			<xe:pageTreeNode page="BeersXSP" label="Beers.xsp"/>
+			<xe:pageTreeNode page="BeerXSP" label="Beer.xsp"/>
+			
+			<xe:separatorTreeNode/>
+			
+			<xe:pageTreeNode page="XSPCouchbaseConnection" label="XSPCouchbaseConnection"/>
+			<xe:pageTreeNode page="CouchbaseDocument" label="CouchbaseDocument"/>
+			<xe:pageTreeNode page="CouchbaseDocumentData" label="CouchbaseDocumentData"/>
+			<xe:pageTreeNode page="CouchbaseView" label="CouchbaseView"/>
+			<xe:pageTreeNode page="CouchbaseViewData" label="CouchbaseViewData"/>
+			
+			<xe:separatorTreeNode/>
+			
+			<xe:pageTreeNode page="FacesConfig" label="faces-config.xml"/>
+			<xe:pageTreeNode page="couchbaseDocument_config" label="couchbaseDocument.xsp-config"/>
+			<xe:pageTreeNode page="couchbaseView_config" label="couchbaseView.xsp-config"/>
+			
+			<xe:separatorTreeNode/>
+			
+			<xe:pageTreeNode page="License" label="LICENSE"/>
+		</xe:this.treeNodes>
+	</xe:navigator>
+</xp:view>

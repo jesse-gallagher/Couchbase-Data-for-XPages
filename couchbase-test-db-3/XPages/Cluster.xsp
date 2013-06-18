@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="Cluster">
+	
+	<xc:Layout>
+		<xp:div id="refresher">
+			<p>
+				Clutser scope written at&#160;
+				<xp:text value="#{clusterScope.updated}">
+					<xp:this.converter>
+						<xp:convertDateTime type="both"></xp:convertDateTime>
+					</xp:this.converter>
+				</xp:text></p>
+				<p><xp:text value="#{clusterScope.updated}"></xp:text></p>
+		</xp:div>
+		<xp:button id="updateCluster" value="Update">
+			<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="refresher">
+				<xp:this.action>
+					<xp:setValue binding="#{clusterScope.updated}"><xp:this.value><![CDATA[#{javascript:
+						var theSet = new java.util.HashSet()
+						theSet.add(@Now())
+						theSet.add(database.createDocument().getUniversalID())
+						return theSet
+					}]]></xp:this.value></xp:setValue>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xc:Layout>
+</xp:view>

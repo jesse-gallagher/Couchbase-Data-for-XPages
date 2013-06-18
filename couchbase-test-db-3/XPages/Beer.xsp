@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:cb="http://frostillic.us/xsp/couchbase"
+	beforePageLoad="#{pageController.beforePageLoad}" afterPageLoad="#{pageController.afterPageLoad}" pageTitle="Beers" readonly="${context.user.name == 'anonymous'}">
+
+	<xp:this.data>
+		<cb:couchbaseDocument var="beer" connectionName="couchbasePelias" documentId="${param.documentId}"/>
+	</xp:this.data>
+	
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="xsp-success" viewId="/Beers.xsp"/>
+	</xp:this.navigationRules>
+
+	<xc:Layout>
+		<xe:formTable formTitle="Beer">
+			<xp:this.facets>
+				<xp:div xp:key="footer" loaded="${!view.readonly}">
+					<xp:button id="save" value="Save">
+						<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="false" save="true"/>
+					</xp:button>
+					<xp:link id="cancel" value="/Beers.xsp" text="Cancel"/>
+				</xp:div>
+			</xp:this.facets>
+		
+			<xe:formRow label="ABV">
+				<xp:inputText value="#{beer.abv}">
+					<xp:this.converter>
+						<xp:convertNumber type="number"/>
+					</xp:this.converter>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow label="Brewery ID">
+				<xe:djTextarea value="#{beer.brewery_id}"/>
+			</xe:formRow>
+			<xe:formRow label="Category">
+				<xe:djTextarea value="#{beer.category}"/>
+			</xe:formRow>
+			<xe:formRow label="Description">
+				<xe:djTextarea value="#{beer.description}"/>
+			</xe:formRow>
+			<xe:formRow label="IBU">
+				<xp:inputText value="#{beer.ibu}">
+					<xp:this.converter>
+						<xp:convertNumber type="number"/>
+					</xp:this.converter>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow label="Name">
+				<xe:djTextarea value="#{beer.name}"/>
+			</xe:formRow>
+			<xe:formRow label="SRM">
+				<xp:inputText value="#{beer.srm}">
+					<xp:this.converter>
+						<xp:convertNumber type="number"/>
+					</xp:this.converter>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow label="Style">
+				<xe:djTextarea value="#{beer.style}"/>
+			</xe:formRow>
+			<xe:formRow label="Type">
+				<xe:djTextarea value="#{beer.type}"/>
+			</xe:formRow>
+			<xe:formRow label="UPC">
+				<xp:inputText value="#{beer.upc}">
+					<xp:this.converter>
+						<xp:convertNumber type="number"/>
+					</xp:this.converter>
+				</xp:inputText>
+			</xe:formRow>
+			<xe:formRow label="Updated">
+				<xe:djTextarea value="#{beer.updated}"/>
+			</xe:formRow>
+			
+		</xe:formTable>
+	</xc:Layout>
+</xp:view>

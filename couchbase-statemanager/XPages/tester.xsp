@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<p><xp:button id="clickMe" value="Click Me">
+		<xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="refresher"/>
+	</xp:button></p>
+	
+	<p><xp:text id="refresher" value="Updated at #{javascript: @Now()}"/></p>
+
+</xp:view>
